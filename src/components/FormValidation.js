@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-const App = () => {
+import React, { useState } from 'react';
+
+const FormValidation = () => {
     // state for get the password
     const [password, setPassword] = useState('');
     // state for getting confirm password
@@ -44,6 +45,6 @@ const App = () => {
 
         </div>
     );
-}
+};
 
-export default App
+export default FormValidation;

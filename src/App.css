@@ -1,11 +1,7 @@
-.xzoom-gallery {
-  margin-top: 10px
+.valid-field {
+  background-color: gray;
 }
 
-.xzoom {
-  margin-top: 40px
-}
-
-body {
-  background-color: #E0E0E0
+.invalid-field {
+  background-color: salmon;
 }

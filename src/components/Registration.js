@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import { useEffect } from 'react';
 const Registration = () => {
     const [
         createUserWithEmailAndPassword,
@@ -20,9 +21,12 @@ const Registration = () => {
         console.log(user)
         console.log(error)
     };
-    if (user) {
-        console.log(user)
-    };
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (user) {
+            navigate('/');
+        }
+    }, [user, navigate])
     if (error) {
         console.log(error)
     }

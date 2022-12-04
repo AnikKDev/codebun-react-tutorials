@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import Login from "./components/Login";
-import Registration from "./components/Registration";
-
-
-
+import React, { Fragment, useState } from "react";
+import AddUser from "./AddUser";
+import './App.css'
+import SimpleInputForm from "./components/SimpleInputForm";
 const App = () => {
-
   return (
-    <div >
-      {/* declare route container */}
-      <Routes>
-        <Route path="/" element={<Registration />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </div>
+    <Fragment>
+      <SimpleInputForm />
+    </Fragment>
   );
 }
 
