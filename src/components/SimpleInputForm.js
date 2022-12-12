@@ -6,17 +6,17 @@ const SimpleInputForm = () => {
   // reference variable for email
   const enteredEmailRef = useRef();
 
-  //   getting values for name and email from the reference
-  const enteredName = enteredNameRef.current.value;
-  const enteredEmail = enteredEmailRef.current.value;
-
   //   form handling function
   const handleFormSubmission = (e) => {
     e.preventDefault();
-    console.log({
-      name: enteredName,
-      email: enteredEmail,
-    });
+    const enteredName = e.target.name.value;
+    const enteredEmail = e.target.email.value;
+    console.log(enteredName, enteredEmail);
+    if (enteredName && enteredEmail) {
+      localStorage.setItem("isLoggedIn", "1");
+    } else {
+      alert("Please fill up all the input fields");
+    }
   };
 
   return (
@@ -24,7 +24,7 @@ const SimpleInputForm = () => {
       <form onSubmit={handleFormSubmission} class="card-body my-20 p-0">
         <div className="form-control items-center lg:items-start">
           <input
-            ref={enteredNameRef}
+            name="name"
             type="text"
             placeholder="user name"
             className="input input-bordered w-full max-w-md "
@@ -32,7 +32,7 @@ const SimpleInputForm = () => {
         </div>
         <div className="form-control items-center lg:items-start">
           <input
-            ref={enteredEmailRef}
+            name="email"
             type="email"
             placeholder="email"
             className="input input-bordered w-full max-w-md "
